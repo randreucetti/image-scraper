@@ -13,8 +13,9 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
+    @page.images << Image.new(:name => "PHOTO", :image => URI.parse('https://scontent-sin1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10984470_10203046783049331_5782963138364494370_n.jpg?oh=c96e69624908eacd174379faf212972b&oe=56705FBD'))
     if @page.save
-      redirect_to '/pages/index'
+      redirect_to '/pages'
     else
       render 'new'
     end
@@ -24,8 +25,5 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(:url)
-  end
-
-  def show
   end
 end
