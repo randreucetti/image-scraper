@@ -1,0 +1,9 @@
+<%= form_for(@page) do |f| %>
+<div class="field">
+  <%= f.label :url %>
+  <%= f.text_field :url %><br>
+</div>
+<div class="actions">
+  <%= f.submit "Create" %>
+</div>
+<% end %>
